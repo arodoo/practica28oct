@@ -1,0 +1,27 @@
+.divContainer{
+    padding-top: 5%;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.h2Ti{
+    margin-top: 2em;
+    text-align:center;
+}
+
+.ibotton{
+    padding-left: 20%;
+}
+
+.buttonAnadir {
+    background-color: #FF3A0F;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    font-size: 20px;
+    color: rgb(255, 225, 225);
+}
+
+.buttonAnadir:hover {
+    background-color: #FF3A0F;
+    color: white;
+}
