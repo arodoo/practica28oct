@@ -1,32 +1,75 @@
+<div class="container card paddc">
+  <label for="inputEmail4" class="form-label marTitle">Cita</label>
 
-<div class=" container card paddc">
-    <label for="inputEmail4" class="form-label marTitle">Cita</label>
-  
-  <form class="row g-3">
-  
+  <form class="row g-3" (ngSubmit)="onSubmit()" [formGroup] = "editCitaForm">
     <div class="col-md-4 divIn">
-        <label class="form-label sub">Fecha</label>
-        <input type="date" class="form-control" id="inputCity">
-      </div>
-      <div class="col-md-4 divIn">
-        <label class="form-label sub">Lugar</label>
-        <input type="text" class="form-control" ngModel pattern="[a-zA-Z]*">
-      </div>
-      <div class="col-md-4 divIn">
-        <label class="form-label sub">Consulta</label>
-        <input type="text" class="form-control" ngModel pattern="[a-zA-Z]*">
-      </div>
-      <div class="col-md-4 divIn">
-        <label class="form-label sub">Médico</label>
-        <input type="text" class="form-control" ngModel pattern="[a-zA-Z]*">
-      </div>
-      <div class="col-md-4 divIn100">
-        <label class="form-label sub">Motivo</label>
-        <input type="text" class="form-control" ngModel pattern="[a-zA-Z]*">
-      </div>
-  
+      <label class="form-label sub" for="fecha">Fecha</label>
+      <input
+        type="date"
+        class="form-control"
+        name="fecha"
+        required
+        formControlName="fecha"
+      />
+    </div>
+    <div class="col-md-4 divIn">
+      <label class="form-label sub" for="lugar">Lugar</label>
+      <input
+        type="text"
+        class="form-control"
+        ngModel
+        pattern="[a-zA-Z]*"
+        name="lugar"
+        required
+        formControlName="lugar"
+      />
+    </div>
+    <div class="col-md-4 divIn">
+      <label class="form-label sub" for="consulta">Consulta</label>
+      <input
+        type="text"
+        class="form-control"
+        ngModel
+        pattern="[a-zA-Z]*"
+        name="consulta"
+        required
+        formControlName="consulta"
+      />
+    </div>
+    <div class="col-md-4 divIn">
+      <label class="form-label sub" for="medico">Médico</label>
+      <input
+        type="text"
+        class="form-control"
+        ngModel
+        pattern="[a-zA-Z]*"
+        name="medico"
+        required
+        formControlName="medico"
+      />
+    </div>
+    <div class="col-md-4 divIn100">
+      <label class="form-label sub" for="motivo">Motivo</label>
+      <input
+        type="text"
+        class="form-control"
+        ngModel
+        pattern="[a-zA-Z]*"
+        name="motivo"
+        required
+        formControlName="motivo"
+      />
+    </div>
+
     <div class="col-12">
-      <button type="submit" class="btn btn-primary sub buttonAnadir">Guardar</button>
+      <button
+        type="submit"
+        class="btn btn-primary sub buttonAnadir"
+        [disabled]="editCitaForm.invalid"
+        routerLink="/citas"
+      >
+        Guardar
+      </button>
     </div>
   </form>
-  </div>
+</div>
