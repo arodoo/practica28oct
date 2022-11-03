@@ -13,6 +13,7 @@ export class EditControlComponent implements OnInit {
   editControlForm: FormGroup;
   id: any | null;
   titulo = 'Agregar control';
+  controles: any;
 
   constructor(private readonly fb: FormBuilder,
     public controlService: ControlService,
@@ -74,5 +75,11 @@ export class EditControlComponent implements OnInit {
       }
     );
   }
-  
+  delete(control: any) {
+    this.controlService.deleteControl(control.id).subscribe(response => {
+      if (response.delete == true) {
+        this.controles.pop(control);
+      }
+    });
+  }
 }

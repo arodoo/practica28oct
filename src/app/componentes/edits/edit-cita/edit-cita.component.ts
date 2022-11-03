@@ -13,6 +13,7 @@ export class EditCitaComponent implements OnInit {
   editCitaForm: FormGroup;
   id: any | null;
   titulo = 'Agregar cita'
+  citas: any;
 
   constructor(public fb: FormBuilder,
     public citaService: CitaService,
@@ -81,5 +82,13 @@ export class EditCitaComponent implements OnInit {
       error => {
         console.log(error)
       })
+  }
+
+  delete(cita: any) {
+    this.citaService.deleteCita(cita.id).subscribe(response => {
+      if (response.delete == true) {
+        this.citas.pop(cita);
+      }
+    });
   }
 }

@@ -3,7 +3,6 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <!--<th scope="col">#</th>-->
         <th scope="col">Fecha</th>
         <th scope="col">Lugar</th>
         <th scope="col">Operaciones</th>
@@ -15,7 +14,7 @@
         <td>{{ c.fecha }}</td>
         <td>{{ c.lugar }}</td>
         <td>
-          <i class="fa-solid fa-pen-to-square ibotton" routerLink="['edit-cita', c.id]"></i>
+          <i class="fa-solid fa-pen-to-square ibotton" [routerLink]="['/edit-cita', c.id]"></i>
           <i class="fa-solid fa-circle-info ibotton"></i>
           <i class="fa-solid fa-trash ibotton" (click)="delete(c)"></i>
         </td>

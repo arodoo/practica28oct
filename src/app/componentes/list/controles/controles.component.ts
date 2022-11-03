@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ControlService } from 'src/app/servicios/control/control.service';
 
 @Component({
   selector: 'app-controles',
@@ -7,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlesComponent implements OnInit {
 
+  citas: any;
   titulo = 'Controles';
-  constructor() { }
+  controles: any;
+
+  constructor(private controlService: ControlService) { }
 
   ngOnInit(): void {
+    this.controlService.getAllControles().subscribe(response => {
+      this.controles = response;
+    },
+    error => {
+      console.error(error)
+    });
+  }
+
+  delete(control: any) {
+    this.controlService.deleteControl(control.id).subscribe(response => {
+      if(response.delete == true) {
+        this.controles.pop(control);
+      }
+    });
   }
 
 }

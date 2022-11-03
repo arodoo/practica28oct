@@ -14,15 +14,14 @@
     </thead>
 
     <tbody class="table-group-divider">
-      <tr>
+      <tr *ngFor="let t of tratamientos">
         <!--<th scope="row">1</th>-->
-        <td>tratamiento 1</td>
-        <td>veces al día 1</td>
-        <td>cantidad 1</td>
+        <td> {{t.nombre}} </td>
+        <td> {{t.veces_al_dia}} </td>
+        <td> {{t.cantidad}} </td>
         <td>
-          <i class="fa-solid fa-pen-to-square ibotton"></i>
-          <i class="fa-solid fa-circle-info ibotton"></i>
-          <i class="fa-solid fa-trash ibotton"></i>
+          <i class="fa-solid fa-pen-to-square ibotton" [routerLink]="['edit-tratamiento', t.id]"></i>
+          <i (click)="delete(t)" class="fa-solid fa-trash ibotton"></i>
         </td>
       </tr>
     </tbody>

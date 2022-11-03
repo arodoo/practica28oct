@@ -11,13 +11,11 @@
     </thead>
 
     <tbody class="table-group-divider">
-      <!--<tr *ngFor="let cit of cita">-->
-        <tr>
-        <td>Nombre del control 1</td>
+      <tr *ngFor="let con of controles">
+        <td> {{con.nombre}} </td>
         <td>
-          <i class="fa-solid fa-pen-to-square ibotton"></i>
-          <i class="fa-solid fa-circle-info ibotton"></i>
-          <i class="fa-solid fa-trash ibotton"></i>
+          <i [routerLink]="['edit-control', con.id]" class="fa-solid fa-pen-to-square ibotton"></i>
+          <i (click)="delete(con)" class="fa-solid fa-trash ibotton"></i>
         </td>
       </tr>
     </tbody>

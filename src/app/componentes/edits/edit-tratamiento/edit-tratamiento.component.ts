@@ -13,6 +13,7 @@ export class EditTratamientoComponent implements OnInit {
   editCitaForm: FormGroup;
   id: any | null;
   titulo = 'Agregar tratamiento';
+  tratamientos: any;
 
   constructor(private readonly fb: FormBuilder,
     public tratamientoService: TratamientoService,
@@ -88,6 +89,14 @@ export class EditTratamientoComponent implements OnInit {
       }
     );
   }
+
+  delete(tratamiento: any) {
+    this.tratamientoService.deleteTratamiento(tratamiento.id).subscribe(response => {
+      if (response.delete == true) {
+        this.tratamientos.pop(tratamiento);
+      }
+    });
+  }  
 }
 
 
