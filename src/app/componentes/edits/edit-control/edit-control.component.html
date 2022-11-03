@@ -1,7 +1,7 @@
 <div class="container card paddc">
-  <label class="form-label marTitle">Control</label>
+  <label class="form-label marTitle"> {{titulo}} </label>
 
-  <form class="row g-3" (ngSubmit)="onSubmit()" [formGroup] = "editControlForm">
+  <form class="row g-3" (ngSubmit)="saveOrUpdate()" [formGroup] = "editControlForm">
     <div class="col-md-4 divIn">
       <label class="form-label sub" for="fecha">Fecha</label>
       <input

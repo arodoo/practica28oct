@@ -10,23 +10,23 @@ export class TratamientoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAllServicios(): Observable<any> {
+  public getAllTratamientos(): Observable<any> {
     return this.httpClient.get(this.URL);
   }
 
-  public getServicio(id: any): Observable<any> {
+  public getTratamiento(id: any): Observable<any> {
     return this.httpClient.get(this.URL + '/' + id);
   }
 
-  public creteServicio(servicio: any): Observable<any> {
+  public creteTratamiento(servicio: any): Observable<any> {
     return this.httpClient.post(this.URL, servicio);
   }
 
-  public deleteServicio(id: any): Observable<any>{
+  public deleteTratamiento(id: any): Observable<any>{
     return this.httpClient.delete(this.URL + '/' + id);
   }
 
-  public updateUser(id: any, servicio: any){
+  public updateTratamiento(id: any, servicio: any){
     return this.httpClient.put(this.URL + '/' + id, servicio);
   }
 }
