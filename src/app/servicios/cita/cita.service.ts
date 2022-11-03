@@ -7,9 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class CitaService {
 
-  private URL = 'http://localhost:8080';
+  private URL = 'http://localhost:8080/api/v1/users';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+
+   }
 
   public getAllCitas(): Observable<any> {
     return this.httpClient.get(this.URL);
@@ -29,5 +31,5 @@ export class CitaService {
 
   public updateCita(id: any, user: any) {
     return this.httpClient.put(this.URL + "/" + id, user);
-  }
+  } 
 }

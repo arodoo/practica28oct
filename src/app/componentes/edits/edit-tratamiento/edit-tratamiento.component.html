@@ -1,37 +1,80 @@
+<div class="container card paddc">
+  <label for="inputEmail4" class="form-label marTitle"
+    >Agregar Tratamientos</label
+  >
 
-<div class=" container card paddc">
-    <label for="inputEmail4" class="form-label marTitle">Agregar Tratamientos</label>
-  
-  <form class="row g-3">
-  
+  <form class="row g-3" (ngSubmit)="onSubmit()" [formGroup] = "editCitaForm">
     <div class="col-md-4">
-        <label for="inputCity" class="form-label sub">Fecha</label>
-        <input type="text" class="form-control" pattern="[a-z]{1,15}">
-      </div>
-      <div class="col-md-4">
-        <label for="inputCity" class="form-label sub">Veces al día</label>
-        <input type="number" class="form-control" pattern=" [1-100] {1,15}">
-      </div>
-      <div class="col-md-4">
-        <label for="inputCity" class="form-label sub">Cantidad</label>
-        <input type="number" class="form-control" pattern="[1-100]">
-      </div>
-  
-    <div class="col-md-6">
-      <label for="inputEmail4" class="form-label sub">Fecha de inicio</label>
-      <input type="date" class="form-control">
+      <label for="nombre_medicina" class="form-label sub">Medicina</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nombre_medicina"
+        required
+        formControlName="nombre_medicina"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="veces_al_dia" class="form-label sub">Veces al día</label>
+      <input
+        type="number"
+        class="form-control"
+        name="veces_al_dia"
+        required
+        formControlName="veces_al_dia"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="cantidad" class="form-label sub">Cantidad</label>
+      <input
+        type="number"
+        class="form-control"
+        name="cantidad"
+        required
+        formControlName="cantidad"
+      />
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label sub">Fecha de finalización</label>
-      <input type="date" class="form-control">
+      <label for="fecha_inicio" class="form-label sub">Fecha de inicio</label>
+      <input
+        type="date"
+        class="form-control"
+        name="fecha_inicio"
+        required
+        formControlName="fecha_inicio"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="fecha_fin" class="form-label sub"
+        >Fecha de finalización</label
+      >
+      <input
+        type="date"
+        class="form-control"
+        name="fecha_fin"
+        required
+        formControlName="fecha_fin"
+      />
     </div>
     <div class="col-12">
-      <label for="inputAddress" class="form-label sub">Consulta</label>
-      <input type="text" class="form-control">
+      <label for="comentarios" class="form-label sub">Comentarios</label>
+      <input
+        type="text"
+        class="form-control"
+        name="comentarios"
+        required
+        formControlName="comentarios"
+      />
     </div>
-  
+
     <div class="col-12">
-      <button type="submit" class="btn btn-primary sub buttonAnadir" routerLink="tratamientos">Guardar</button>
+      <button
+        type="submit"
+        class="btn btn-primary sub buttonAnadir"
+        [disabled]="editCitaForm.invalid"
+      >
+        Guardar
+      </button>
     </div>
   </form>
-  </div>
+</div>

@@ -9,7 +9,9 @@ export class TratamientosComponent implements OnInit {
 
   titulo = 'Tratamientos';
 
-  constructor() { }
+  constructor(
+    
+  ) { }
 
   ngOnInit(): void {
   }

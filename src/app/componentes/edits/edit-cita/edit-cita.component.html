@@ -1,7 +1,7 @@
 <div class="container card paddc">
-  <label for="inputEmail4" class="form-label marTitle">Cita</label>
+  <label class="form-label marTitle"> {{titulo}} </label>
 
-  <form class="row g-3" (ngSubmit)="onSubmit()" [formGroup] = "editCitaForm">
+  <form class="row g-3" [formGroup] = "editCitaForm" (ngSubmit)="saveOrUpdate">
     <div class="col-md-4 divIn">
       <label class="form-label sub" for="fecha">Fecha</label>
       <input
@@ -66,7 +66,7 @@
         type="submit"
         class="btn btn-primary sub buttonAnadir"
         [disabled]="editCitaForm.invalid"
-        routerLink="/citas"
+        
       >
         Guardar
       </button>

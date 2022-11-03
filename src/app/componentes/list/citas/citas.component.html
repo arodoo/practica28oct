@@ -11,14 +11,13 @@
     </thead>
 
     <tbody class="table-group-divider">
-      <tr>
-        <tr>
-        <td>Fecha 1</td>
-        <td>Lugar 1</td>
+      <tr *ngFor="let c of citas">
+        <td>{{ c.fecha }}</td>
+        <td>{{ c.lugar }}</td>
         <td>
-          <i class="fa-solid fa-pen-to-square ibotton"></i>
+          <i class="fa-solid fa-pen-to-square ibotton" routerLink="['edit-cita', c.id]"></i>
           <i class="fa-solid fa-circle-info ibotton"></i>
-          <i class="fa-solid fa-trash ibotton"></i>
+          <i class="fa-solid fa-trash ibotton" (click)="delete(c)"></i>
         </td>
       </tr>
     </tbody>
